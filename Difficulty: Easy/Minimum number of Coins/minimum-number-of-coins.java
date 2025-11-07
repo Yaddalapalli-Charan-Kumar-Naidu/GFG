@@ -1,18 +1,18 @@
 class Solution {
     public int findMin(int n) {
         // code here
-        int[] currency={1,2,5,10};
-        int right=3;
-        int res=0;
-        while(n>0 && right>=0){
-            if(currency[right]>n){
+        int[] arr=new int[]{1,2,5,10};
+        
+        int num=n;
+        int count=0;
+        while(num>0){
+            int right=4-1;
+            while(num<arr[right]){
                 right--;
             }
-            else{
-                n-=currency[right];
-                res++;
-            }
+            num-=arr[right];
+            count++;
         }
-        return res;
+        return count;
     }
 }
